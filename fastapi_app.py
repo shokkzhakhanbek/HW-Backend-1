@@ -2,19 +2,16 @@ from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
-# 1 GET /
 @app.get("/")
 def hello():
     return {"message": "Hello, nfactorial!"}
 
 
-# 2 POST /meaning-of-life
 @app.post("/meaning-of-life")
 def meaning():
     return {"meaning": "42"}
 
 
-# 3 GET /{num}
 def factorial(n: int) -> int:
     result = 1
     for i in range(2, n + 1):
